@@ -14,6 +14,11 @@ function Categories() {
         }
     },[location.pathname])
 
+  // Hide on login and signup pages
+  if (location.pathname === "/login" || location.pathname === "/signup") {
+    return null;
+  }
+
   if (loading)
     return (
       <div className="bg-white py-3 text-center text-sm font-medium shadow">
