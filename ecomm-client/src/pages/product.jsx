@@ -22,7 +22,7 @@ function Product() {
       name: product.name,
       price: product.price,
       image: product.images?.[0]
-        ? `http://localhost:1337${product.images[0].url}`
+        ? `${process.env.REACT_APP_API_URL || "http://localhost:1337"}${product.images[0].url}`
         : "",
     });
     console.log("Added:", product.documentId);
@@ -35,7 +35,7 @@ function Product() {
         <div className="bg-gray-100 rounded-xl p-6 flex items-center justify-center">
           {product.images?.[0] && (
             <img
-              src={`http://localhost:1337${product.images[0].url}`}
+              src={`${process.env.REACT_APP_API_URL || "http://localhost:1337"}${product.images[0].url}`}
               alt={product.name}
               className="max-h-96 object-contain"
             />

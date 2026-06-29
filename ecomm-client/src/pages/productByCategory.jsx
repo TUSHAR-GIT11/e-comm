@@ -20,7 +20,7 @@ function ProductByCategory() {
         <div key={item.documentId} className="bg-white shadow rounded-lg p-4">
           {item.images?.[0] && (
             <img
-              src={`http://localhost:1337${item.images[0].url}`}
+              src={`${process.env.REACT_APP_API_URL || "http://localhost:1337"}${item.images[0].url}`}
               alt={item.name}
               className="h-40 w-full object-contain mb-4"
             />

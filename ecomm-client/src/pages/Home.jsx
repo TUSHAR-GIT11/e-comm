@@ -45,7 +45,7 @@ function Home() {
               <div className="h-48 bg-gray-100 rounded-t-xl overflow-hidden">
                 {item.images?.[0] && (
                   <img
-                    src={`http://localhost:1337${item.images[0].url}`}
+                    src={`${process.env.REACT_APP_API_URL || "http://localhost:1337"}${item.images[0].url}`}
                     alt={item.name}
                     className="h-full w-full object-cover"
                   />
